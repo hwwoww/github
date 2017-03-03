@@ -1,7 +1,3 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<h2>아무거나 추가</h2>
-했는데 왜 안생겨
-뭐야 뭔데 ???????
-됬다아아아아아아
+<h2> gogggg</h2>
