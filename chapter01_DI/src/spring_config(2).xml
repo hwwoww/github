@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config></context:annotation-config>
+
+	<bean class="model.Beta" id="beta"></bean>
+
+	<bean class="model.Beta" id="beta2">
+		<property name="target">
+			<value>192.168.10.21</value>
+		</property>
+		<property name="count" value="3"/>
+	</bean>
+	<!-- property를 통한 설정도 p를 체크 -->
+	<bean class="model.Beta" id="beta3" 
+			p:count="2" p:target="192.168.10.21"/>
+			
+	<bean class="model.UseBeta" id="ub" />
+	
+	<!-- bean 등록시 배열(list도 마찬가지) -->
+
+	<bean id="gamma" class="model.Gamma">
+		<property name = "array">
+			<list>
+				<value>monday</value>
+				<value>tuesday</value>
+				<value>wednesday</value>
+			</list>
+		</property>
+		<property name = "list">
+			<list>
+				<value>monday</value>
+				<value>tuesday</value>
+				<value>wednesday</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	<bean id ="delta" class="model.Delta">
+		<!-- map 설정 -->
+		<property name="dataOne">
+			<map>
+			<entry key="life" value="3" value-type="int"/>
+			<entry key="aim" value="go home" value-type="java.lang.String"/>
+			</map>
+		</property>
+		
+		<!-- property 설정 -->
+		<property name="dataTwo">
+			<props>
+				<prop key="username">master</prop>
+				<prop key="password">master</prop>
+			</props>
+		</property>
+		
+		
+		
+		
+		
+		
+		
+		
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</beans>

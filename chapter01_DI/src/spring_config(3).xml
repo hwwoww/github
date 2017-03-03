@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+		bean 등록 시 두개를 연동시켜서 등록해야 할 때가 있다.
+ -->
+ <bean id="b" class="model.Beta"/>
+ <bean id="omega" class="model.Omega">
+ 	<property name="beta" ref="b"/>
+ <!-- 								ref : 객체연결(reference) 
+ 											땡겨쓰기						 -->
+ </bean>
+ 
+ <bean id="tmp" class="java.util.HashMap"/>
+ <bean id="delta" class="model.Delta">
+ 	<property name="dataOne" ref="tmp"/>
+ </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

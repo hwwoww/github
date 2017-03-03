@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:annotation-config/>
+	<bean id="dsadsa" class="model.ExMessage" />
+	<bean id="msg" class="java.util.ArrayList" />
+	<bean id="alert" class="model.AlertMessage" />
+ 	
+ 	<!-- 스프링을 통해서 처리할 빈등록을 할때.  
+ 			생성자나 setter를 필요한 내용을 설정해서 등록시키는게 가능-->
+ 	<!-- ## 생성자 계열  -->
+ 	<bean id="a1" class="model.Alpha">
+ 		<constructor-arg index="0" type="int">
+ 			<value>1</value>
+ 		</constructor-arg>
+ 	</bean>		
+ 	
+ 	<bean id="a2" class="model.Alpha">
+ 		<constructor-arg name="flag">
+ 			<value>true</value>
+ 		</constructor-arg>
+ 		<constructor-arg name="num" value="33"/>
+		<constructor-arg name="str" value="이런것" />
+ 	</bean>				
+ 	<bean id="a3" class="model.Alpha">
+ 		<constructor-arg index="0">
+ 			<value>이런것</value>
+ 		</constructor-arg>
+ 		<constructor-arg index="1" value="33"/>
+		<constructor-arg index="2" value="true" />
+ 	</bean>	
+ 	
+ 	<!--  밑에 Namespaces 에서 c를 체크  -->
+ 	<!--  constructor-arg >> c:str/num/flag....로 자동변환  -->
+ 	<bean id="a4" class="model.Alpha" c:str="안녕" 
+ 									c:num="3" c:flag="false"/>
+	</beans>
